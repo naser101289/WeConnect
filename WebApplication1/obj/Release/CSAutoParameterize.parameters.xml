@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\UserDB.mdf;Initial Catalog=UserDB;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.Config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ProfileConnection-Web.config Connection String" description="ProfileConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\ProfileDB.mdf;Initial Catalog=ProfileDB;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.Config$" match="/configuration/connectionStrings/add[@name='ProfileConnection']/@connectionString" />
+  </parameter>
+  <parameter name="WebApplication1.Models.ProfileContext-Web.config Connection String" description="WebApplication1.Models.ProfileContext Connection String used in web.config by the application to access the database." defaultValue="WebApplication1.Models.ProfileContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.Config$" match="/configuration/connectionStrings/add[@name='WebApplication1.Models.ProfileContext']/@connectionString" />
+  </parameter>
+</parameters>

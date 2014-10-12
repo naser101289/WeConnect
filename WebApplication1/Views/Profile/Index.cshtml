@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.ProfileStatusVM
+
+@{
+    ViewBag.Title = "Your Profile";
+    var columns = new List<string> { "StatusUpdate", "UpdatedByFullName" };
+    var grid = new WebGrid(Model.StatusList, defaultSort: "TimeOfUpdate", columnNames: columns, rowsPerPage: 5);
+    grid.SortDirection = SortDirection.Descending;
+}
+
+<hr />
+<h1>Who You Are:</h1>
+<h3>@Html.DisplayFor(m => m.Profile.FullName) - @Html.DisplayFor(m => m.Profile.FavoriteSaying)</h3>
+
+<img src="@Url.Action("GetImage", "Profile", new {id = Model.Profile.Id})" width="250" />
+<p>Edit your picture. Click the edit link. @Html.ActionLink("Edit Image", "EditImage", new { id = Model.Profile.Id })</p>
+<hr />
+
+
+<h1>What's Going On With You:</h1>
+<p>Your most recent status updates (and name of the author of the comments)</p>
+@grid.GetHtml(displayHeader: false, tableStyle: "webGrid", alternatingRowStyle: "alt")
+<p>&nbsp;</p>
+@Html.ActionLink("Add New Status Update", "EditStatus", new { id = Model.Profile.Id })
+<hr />
+
+
+<h1>Be social:</h1>
+<p> Connect with others and message them! @Html.ActionLink("Connect with other users", "ShowFriends", new { id = Model.Profile.Id })</p>
+

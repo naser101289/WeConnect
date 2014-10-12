@@ -1,0 +1,72 @@
+﻿@model WebApplication1.Models.ProfileStatusVM
+@using WebApplication1.Models
+
+@{
+
+    ViewBag.Title = "Show Friends";
+    var statusMasterList = Model.StatusList.ToList();
+    var personalizedStatusList = new List<Status>();
+}
+
+<h2>Other Users</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Picture
+        </th>
+        <th>
+            Their Most Recent Update
+        </th>
+        <th>
+            Post To Their Status Updates
+        </th>
+    </tr>
+
+    @foreach (var item in Model.ProfileCollection)
+    {
+        <tr class="active">
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                <img src="@Url.Action("GetImage", "Profile", new {id = item.Id})" width="100" />
+            </td>
+            <td>
+                @{ if (personalizedStatusList.Count > 0)
+                 {
+                     personalizedStatusList.RemoveRange(0, personalizedStatusList.Count);
+                 }
+                }
+                @foreach (var thing in statusMasterList)
+                {
+                    if (thing.UserWhomStatusBelongsTo == item.Id)
+                    {
+                        personalizedStatusList.Add(thing);
+                    }
+                }
+                @{personalizedStatusList = personalizedStatusList.OrderBy(x => x.TimeOfUpdate).ToList(); }
+                @personalizedStatusList[personalizedStatusList.Count - 1].StatusUpdate
+
+
+
+            </td>
+            <td>
+                Leave a message here. <br />
+                @using (Html.BeginForm("LeaveMessage", "Profile"))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.Hidden("FriendId", item.Id)
+                        @Html.Editor("MsgForFriend")
+                        <input type="submit" value="Post Message" class="btn btn-primary" />
+                    </div>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

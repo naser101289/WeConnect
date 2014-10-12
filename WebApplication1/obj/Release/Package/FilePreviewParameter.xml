@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="WeConnect" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:ga2yhrgs9k.database.windows.net,1433;Initial Catalog=ProfileContext;User Id=WeConnect@ga2yhrgs9k;Password=Hello53183" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.Config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ProfileConnection-Web.config Connection String" description="" value="Data Source=tcp:ga2yhrgs9k.database.windows.net,1433;Initial Catalog=ProfileContext;User Id=WeConnect@ga2yhrgs9k;Password=Hello53183" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.Config$" match="/configuration/connectionStrings/add[@name='ProfileConnection']/@connectionString" />
+  </parameter>
+  <parameter name="WebApplication1.Models.ProfileContext-Web.config Connection String" description="" value="Data Source=tcp:ga2yhrgs9k.database.windows.net,1433;Initial Catalog=ProfileContext;User Id=WeConnect@ga2yhrgs9k;Password=Hello53183" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nathan\\Desktop\\ASP\ \.NET\ projects\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.Config$" match="/configuration/connectionStrings/add[@name='WebApplication1.Models.ProfileContext']/@connectionString" />
+  </parameter>
+</parameters>
